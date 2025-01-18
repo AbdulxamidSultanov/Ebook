@@ -20,3 +20,5 @@ welcomeSignIn.addEventListener("click", function () {
     signUp.style.opacity = '0%'
   }
 });
+
+
