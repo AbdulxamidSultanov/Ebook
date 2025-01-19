@@ -7,21 +7,30 @@
     <link rel="stylesheet" href="../css/homepage.css" />
   </head>
   <body>
-    <header class="header container">
+    <header class="header">
+      <h1>Just chill, and enjoy with us server!</h1>
+    </header>
+    <main class="hero container">
       <div class="logo">
         <a href="#"><img src="" alt="logo" /></a>
       </div>
       <div class="search">
-        <input type="text" />
-        <input type="text" />
-        <input type="text" />
+        <input type="text" placeholder="Author name" id="byAuthor" />
+        <input type="text" placeholder="Year book" id="byYear" />
+        <input type="text" placeholder="Title" id="byTitle" />
       </div>
       <div class="logOut">
-        <a href="#">Log Out</a>
+        <a href="../loginpage.html">Log Out</a>
       </div>
-    </header>
+    </main>
     <div class="books container">
-        
+      <div class="addCard">
+        <h2>Add new books</h2>
+        <input type="text" placeholder="Author name" id="addAuthor" />
+        <input type="text" placeholder="Book Title" id="addTitle" />
+        <input type="text" placeholder="Book Year" id="addYear" />
+        <button id="addBook">Add book</button>
+      </div>
     </div>
     <footer class="footer container"></footer>
     <script src="../js/homepage.js" type="module"></script>
