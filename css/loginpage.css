@@ -1,0 +1,361 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body,
+html {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  background-image: url(../img/book-shelf-with-many-books-it-including-box-bottom_1064589-163055.avif);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+ul > li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  width: 200px;
+  background-color: rgb(251, 242, 225);
+  outline: none;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+
+  margin: auto;
+  min-width: 768px;
+  max-width: 100%;
+  min-height: 453px;
+  background-color: white;
+  border-radius: 40px;
+
+  position: relative;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  min-width: 38%;
+  padding: 40px;
+}
+
+.signWith {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.signWith > li > a > img {
+  background-color: white;
+  padding: 7px;
+  border-radius: 50%;
+}
+
+h2 {
+  font-size: 36px;
+  color: black;
+}
+
+p {
+  font-size: 14px;
+  color: grey;
+}
+
+#signInForm,
+#signUpForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+}
+
+#signInForm > a {
+  color: grey;
+  font-size: 14px;
+}
+
+#signInForm > button {
+  padding: 15px 40px;
+  border-radius: 15px;
+  background-color: #2da0a8;
+  color: white;
+}
+
+#emailIn {
+  margin-top: 5px;
+}
+
+#welcomeContainer {
+  max-width: 62%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+
+  padding: 40px 60px;
+  width: 100%;
+
+  min-height: 453px;
+
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+
+  position: absolute;
+  right: 0px;
+
+  overflow: hidden;
+  z-index: 1;
+}
+
+#welcomeContainer::before,
+#welcomeContainer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transition: opacity 1s linear;
+  pointer-events: none;
+}
+
+#welcomeContainer::before {
+  opacity: 1;
+  background: linear-gradient(
+    90deg,
+    #fff 0%,
+    #e6fffa 0%,
+    #81e6d9 50%,
+    #38a169 100%
+  );
+}
+
+#welcomeContainer::after {
+  opacity: 0;
+  /* background: linear-gradient(
+    90deg,
+    #38a169 10%,
+    #81e6d9 50%,
+    #e6fffa 100%,
+    #fff 40%
+  ); */
+
+  background: linear-gradient(
+    270deg,
+    #fff 0%,
+    #e6fffa 0%,
+    #81e6d9 50%,
+    #38a169 100%
+  );
+}
+
+#welcomeContainer.gradient-animate::before {
+  opacity: 0;
+}
+
+#welcomeContainer.gradient-animate::after {
+  opacity: 1;
+}
+
+#welcomeContainer > p {
+  text-align: center;
+  color: black;
+}
+
+.gradient-btn {
+  position: relative;
+  overflow: hidden;
+
+  /* Размеры и форма */
+  padding: 12px 32px;
+  border-radius: 12px;
+
+  /* Текст */
+  color: #064e3b; /* Глубокий темно-зеленый */
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-decoration: none;
+
+  /* Стили фона и границ */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+
+  /* Тени */
+  box-shadow: 0 4px 20px rgba(6, 78, 59, 0.25),
+    inset 0 0 12px rgba(255, 255, 255, 0.3);
+
+  /* Анимации */
+  transition: all 0.3s ease;
+  transform: translateZ(0);
+}
+
+/* Эффект "вспышки" внутри кнопки */
+.gradient-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.4) 0%,
+    transparent 70%
+  );
+  opacity: 0.4;
+  z-index: 0;
+}
+
+/* Состояние при наведении */
+.gradient-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(6, 78, 59, 0.35),
+    inset 0 0 16px rgba(255, 255, 255, 0.4);
+}
+
+/* Состояние при нажатии */
+.gradient-btn:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 8px rgba(6, 78, 59, 0.2),
+    inset 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Состояние фокуса */
+.gradient-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.5),
+    0 4px 20px rgba(6, 78, 59, 0.25);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-width: 38%;
+  padding: 40px;
+  max-height: 453px;
+}
+
+#signInForm > button,
+#signUpForm > button {
+  text-align: center;
+  padding: 15px 40px;
+  border-radius: 15px;
+  background-color: #2da0a8;
+  color: white;
+}
+
+#signInForm > p {
+  color: red;
+  display: none;
+}
+
+.isName {
+  color: red;
+  display: none;
+}
+
+.isEmail {
+  color: red;
+  display: none;
+}
+
+.isPass {
+  color: red;
+  display: none;
+}
+
+@keyframes slide-left {
+  from {
+    right: 0;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    background: linear-gradient(
+    90deg,
+    #fff 0%,
+    #e6fffa 0%,
+    #81e6d9 50%,
+    #38a169 100%
+  );
+  }
+  to {
+    background: linear-gradient(
+    90deg,
+    #38a169 10%,
+    #81e6d9 50%,
+    #e6fffa 100%,
+    #fff 40%
+  );
+    right: calc(100% - 62%);
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    right: calc(100% - 62%);
+  }
+  to {
+    right: 0;
+  }
+}
+
+#welcomeContainer.slide-left {
+  animation: slide-left 0.3s forwards;
+  background: linear-gradient(
+    90deg,
+    #38a169 10%,
+    #81e6d9 50%,
+    #e6fffa 100%,
+    #fff 40%
+  );
+}
+
+#welcomeContainer.slide-right {
+  animation: slide-right 0.3s forwards;
+  background: linear-gradient(
+    90deg,
+    #fff 0%,
+    #e6fffa 0%,
+    #81e6d9 50%,
+    #38a169 100%
+  );
+}
